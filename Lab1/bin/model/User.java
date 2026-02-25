@@ -1,64 +1,66 @@
-package tests;
+package model;
 
-import model.User;
-import utils.TestUtils;
-
-public class UserTest {
-
-	public static void main(String[] args) {
-		testUserConstructor();
+public class User {
+	private String username;     // email
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String mobileNumber;
+    
+	
+    public User(String username, String password, String firstName, String lastName, String mobileNumber) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNumber = mobileNumber;
 	}
 
-	public static void testUserConstructor() {
-
-		// 1- Setup
-		String test_username = "mike";
-		String test_password = "my_passwd";
-		String test_first_name = "Mike";
-		String test_last_name = "Smith";
-		String test_mobile_number = "07771234567";
-
-		// 2- Exercise
-		User testUser = new User(test_username, test_password, test_first_name,
-								 test_last_name, test_mobile_number);
-
-		System.out.println("Starting the assertions of the test method: testUserConstructor");
-
-		String test_case_name;
-
-		// TC1
-		test_case_name = "TC1-getUsername";
-		if (testUser.getUsername().equals(test_username))
-			TestUtils.printTestPassed(test_case_name);
-		else
-			TestUtils.printTestFailed(test_case_name);
-
-		// TC2
-		test_case_name = "TC2-getPassword";
-		if (testUser.getPassword().equals(test_password))
-			TestUtils.printTestPassed(test_case_name);
-		else
-			TestUtils.printTestFailed(test_case_name);
-
-		// TC3
-		test_case_name = "TC3-getFirstName";
-		if (testUser.getFirstName().equals(test_first_name))
-			TestUtils.printTestPassed(test_case_name);
-		else
-			TestUtils.printTestFailed(test_case_name);
-
-		// TC4
-		test_case_name = "TC4-getLastName";
-		if (testUser.getLastName().equals(test_last_name))
-			TestUtils.printTestPassed(test_case_name);
-		else
-			TestUtils.printTestFailed(test_case_name);
-
-		// TC5
-		test_case_name = "TC5-getMobileNumber";
-		if (testUser.getMobileNumber().equals(test_mobile_number))
-			TestUtils.printTestPassed(test_case_name);
-		else
-			TestUtils.printTestFailed(test_case_name);
+    
+	public String getUsername() {
+		return username;
 	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+	
+	
+    public String toString() {
+        return username + ", " + password + ", " + firstName + ", " + lastName + ", " + mobileNumber;
+    }
+    
 }
