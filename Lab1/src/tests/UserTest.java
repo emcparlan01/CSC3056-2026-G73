@@ -60,5 +60,14 @@ public class UserTest {
 			TestUtils.printTestPassed(test_case_name);
 		else
 			TestUtils.printTestFailed(test_case_name);
+	
+	// TODO5 - using Java assertions
+	assert testUser.getUsername().equals(test_username);
+	assert testUser.getPassword().equals(test_password);
+	assert testUser.getFirstName().equals(test_first_name);
+	assert testUser.getLastName().equals(test_last_name);
+	assert testUser.getMobileNumber().equals(test_mobile_number);
+
+	System.out.println("All Java assertions in the test suite passed (none failed).");
 	}
 }
